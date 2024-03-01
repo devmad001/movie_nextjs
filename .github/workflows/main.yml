@@ -1,0 +1,16 @@
+name: Deploy to Server
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Execute SSH command
+        uses: devmad001/ssh-action@main
+        with:
+          key: ${{ secrets.SSH_KEY }}
+          run: git pull
