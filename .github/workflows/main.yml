@@ -13,4 +13,6 @@ jobs:
         uses: devmad001/ssh-action@main
         with:
           key: ${{ secrets.SSH_KEY }}
-          run: git pull
+          run: |
+          cd /home/ubuntu/test/movie_nextjs/
+          git pull
